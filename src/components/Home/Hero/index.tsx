@@ -44,11 +44,11 @@ const Hero = () => {
       className='relative z-10 overflow-hidden pt-35 md:pt-40 xl:pt-45'
     >
       {/* <!-- Bottom Row: JB Image + Introduction --> */}
-      <div className='mx-auto -mt-10 flex max-w-7xl items-end px-8'>
-        {/* JB Image - left */}
+      <div className='mx-auto -mt-10 flex max-w-7xl flex-col items-center px-4 sm:px-8 md:flex-row md:items-end'>
+        {/* JB Image - left, hidden on mobile */}
         <div
           ref={jbRef}
-          className={`shrink-0 transition-all duration-700 ease-out ${jbVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}
+          className={`hidden shrink-0 transition-all duration-700 ease-out md:block ${jbVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}
           style={{
             maskImage:
               'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
@@ -56,27 +56,37 @@ const Hero = () => {
               'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
           }}
         >
-          <Image src={jbImg} alt='JB' width={500} height={500} />
+          <Image
+            src={jbImg}
+            alt='JB'
+            width={500}
+            height={500}
+            className='h-auto w-full max-w-[400px] md:max-w-[500px]'
+          />
         </div>
 
         {/* Introduction - centered in remaining space */}
         <div
           ref={contentRef}
-          className='flex flex-1 flex-col items-center justify-center gap-12 px-4'
+          className='flex flex-1 flex-col items-center justify-center gap-8 px-4 md:gap-12'
         >
           <div
             className={`text-center transition-all duration-500 ease-out ${visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
             style={{ transitionDelay: '0ms' }}
           >
-            <p className='text-2xl font-medium text-white/70'>Hi, I&apos;m</p>
-            <h1 className='text-6xl font-extrabold text-white'>Jven Butatil</h1>
+            <p className='text-lg font-medium text-white/70 sm:text-xl md:text-2xl'>
+              Hi, I&apos;m
+            </p>
+            <h1 className='text-4xl font-extrabold text-white sm:text-5xl md:text-6xl'>
+              Jven Butatil
+            </h1>
           </div>
 
           <div
             className={`max-w-2xl text-center transition-all duration-500 ease-out ${visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
             style={{ transitionDelay: '200ms' }}
           >
-            <p className='text-xl leading-relaxed text-white/80'>
+            <p className='text-base leading-relaxed text-white/80 sm:text-lg md:text-xl'>
               A passionate developer with{' '}
               <span className='font-bold text-white'>
                 3 professional certifications
@@ -90,18 +100,18 @@ const Hero = () => {
           </div>
 
           <div
-            className={`flex gap-6 transition-all duration-500 ease-out ${visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+            className={`flex flex-col gap-4 transition-all duration-500 ease-out sm:flex-row sm:gap-6 ${visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
             style={{ transitionDelay: '400ms' }}
           >
             <a
               href='#skills'
-              className='hero-button-gradient rounded-lg px-8 py-3.5 font-medium text-white transition-all duration-300 hover:opacity-80'
+              className='hero-button-gradient rounded-lg px-6 py-3 text-center font-medium text-white transition-all duration-300 hover:opacity-80 sm:px-8 sm:py-3.5'
             >
               View Portfolio
             </a>
             <a
               href='#support'
-              className='rounded-lg border-2 border-white/20 bg-white/5 px-8 py-3.5 font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10'
+              className='rounded-lg border-2 border-white/20 bg-white/5 px-6 py-3 text-center font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10 sm:px-8 sm:py-3.5'
             >
               Contact Me
             </a>

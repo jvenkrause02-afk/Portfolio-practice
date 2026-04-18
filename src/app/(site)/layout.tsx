@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     'Full-stack developer portfolio showcasing web development expertise',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 };
 
 const plusJakarta = Plus_Jakarta_Sans({
