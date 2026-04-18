@@ -39,7 +39,7 @@ const Support = () => {
           </div>
 
           <SectionTitle
-            subTitle='Need Any Help?'
+            subTitle='Need My Skills?'
             title='Contact With Us'
             paragraph="I am available for freelance projects or full-time opportunities. With expertise in modern web development including HTML, Java, and MySQL, I can help bring your ideas to life. Let's discuss how my skills can contribute to your next project."
           />
